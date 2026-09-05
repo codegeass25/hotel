@@ -1,10 +1,10 @@
 {
-  "id": "./admin.html",
+  "id": "./admin-pwa",
   "name": "Harborlight Hotel Admin",
   "short_name": "Hotel Admin",
   "description": "Harborlight property management console for reservations, rooms, website content, payments and OTA channels.",
   "start_url": "./admin.html",
-  "scope": "./",
+  "scope": "./admin.html",
   "display": "standalone",
   "display_override": [
     "window-controls-overlay",
@@ -26,5 +26,8 @@
       "type": "image/png",
       "purpose": "any maskable"
     }
-  ]
+  ],
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
 }

@@ -1,16 +1,28 @@
-HOTEL ADMIN PWA — AFFECTED FILES ONLY
+HOTEL ADMIN PWA v4.2 - INSTALL PROMPT FIX
+========================================
+Upload/replace these files in the SAME GitHub Pages /hotel/ folder:
 
-Replace these files inside FRONTEND-GITHUB-PAGES/:
+REPLACE:
   admin.html
   admin-manifest.json
+  manifest.json
   service-worker.js
 
-Existing icons/icon-192.png and icons/icon-512.png are reused and do not need replacement.
+ADD:
+  admin-service-worker.js
 
-After pushing to GitHub Pages:
-1. Open your normal admin URL ending in /admin.html.
-2. Wait for the service worker/manifest to load.
-3. Click INSTALL ADMIN when shown, or use Chrome/Edge Install app from the address bar/menu.
-4. Installed app launches directly to admin.html.
+Keep your existing icons/ folder and config.js.
 
-Booking PWA remains separate and unchanged.
+After GitHub Pages finishes deploying:
+1. Close any installed Harborlight Booking/Admin app windows.
+2. Open Chrome or Edge normally.
+3. Open https://codegeass25.github.io/hotel/admin.html
+4. Press Ctrl+Shift+R once.
+5. The page may automatically reload once while the dedicated Admin service worker takes control.
+6. The INSTALL ADMIN APP button should then invoke Chrome/Edge's native PWA install prompt once beforeinstallprompt is available.
+
+Why this patch exists:
+- Previous Booking and Admin PWAs shared the same root service-worker scope.
+- v4.2 gives Admin a dedicated service worker with the narrow ./admin.html scope.
+- Admin also has a unique manifest id ./admin-pwa.
+- The guest service worker no longer pre-caches/administers the Admin PWA shell.
