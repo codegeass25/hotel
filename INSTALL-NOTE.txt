@@ -1,0 +1,16 @@
+HOTEL ADMIN PWA — AFFECTED FILES ONLY
+
+Replace these files inside FRONTEND-GITHUB-PAGES/:
+  admin.html
+  admin-manifest.json
+  service-worker.js
+
+Existing icons/icon-192.png and icons/icon-512.png are reused and do not need replacement.
+
+After pushing to GitHub Pages:
+1. Open your normal admin URL ending in /admin.html.
+2. Wait for the service worker/manifest to load.
+3. Click INSTALL ADMIN when shown, or use Chrome/Edge Install app from the address bar/menu.
+4. Installed app launches directly to admin.html.
+
+Booking PWA remains separate and unchanged.
