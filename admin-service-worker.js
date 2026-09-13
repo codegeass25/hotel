@@ -1,5 +1,5 @@
-const CACHE='harborlight-admin-v8-login-toast';
-const SHELL=['./admin.html','./admin-manifest.json','./config.js','./icons/icon-192.png','./icons/icon-512.png'];
+const CACHE='harborlight-admin-v8-brand-maribank';
+const SHELL=['./admin.html','./admin-manifest.json','./config.js'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('harborlight-admin-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
 self.addEventListener('fetch',event=>{
